@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-  
+    public float speed = 20;
     // Update is called once per frame
     void Update()
     {
-        float x = transform.position.x;
-        float y = Camera.main.ScreenToWorldPoint(Input.mousePosition).y;
-        Vector2 tempPosition = new Vector2(x, y);
-        transform.position = tempPosition;
+        transform.Translate(Vector2.up * Time.deltaTime * speed);
+        
     }
 }
